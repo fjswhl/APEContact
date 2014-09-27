@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF19D20D19D7263600FFDE07 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF19D20C19D7263600FFDE07 /* DetailViewController.swift */; };
 		BF3BAA7919D6F23B00E069D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAA7819D6F23B00E069D5 /* AppDelegate.swift */; };
 		BF3BAA7E19D6F23B00E069D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAA7C19D6F23B00E069D5 /* Main.storyboard */; };
 		BF3BAA8019D6F23B00E069D5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAA7F19D6F23B00E069D5 /* Images.xcassets */; };
 		BF3BAA8319D6F23B00E069D5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAA8119D6F23B00E069D5 /* LaunchScreen.xib */; };
 		BF3BAA8F19D6F23B00E069D5 /* contactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAA8E19D6F23B00E069D5 /* contactsTests.swift */; };
 		BF3BAA9919D6F28400E069D5 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAA9819D6F28400E069D5 /* ContactsViewController.swift */; };
+		BF3BAAA419D6F6AD00E069D5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3BAAA019D6F67100E069D5 /* Alamofire.framework */; };
+		BF3BAAA619D6F6D600E069D5 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = BF3BAAA019D6F67100E069D5 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF3BAAA819D6F90400E069D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAAA719D6F90400E069D5 /* LoginViewController.swift */; };
+		BF3BAAAA19D706B200E069D5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAAA919D706B200E069D5 /* BaseViewController.swift */; };
+		BF3BAAAC19D7075F00E069D5 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAAAB19D7075F00E069D5 /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,9 +29,38 @@
 			remoteGlobalIDString = BF3BAA7219D6F23B00E069D5;
 			remoteInfo = contacts;
 		};
+		BF3BAA9F19D6F67100E069D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF3BAA9A19D6F67000E069D5 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		BF3BAAA119D6F67100E069D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF3BAA9A19D6F67000E069D5 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = AlamofireTests;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BF3BAAA519D6F6C100E069D5 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF3BAAA619D6F6D600E069D5 /* Alamofire.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		BF19D20C19D7263600FFDE07 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BF3BAA7319D6F23B00E069D5 /* contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF3BAA7719D6F23B00E069D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF3BAA7819D6F23B00E069D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +71,10 @@
 		BF3BAA8D19D6F23B00E069D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF3BAA8E19D6F23B00E069D5 /* contactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactsTests.swift; sourceTree = "<group>"; };
 		BF3BAA9819D6F28400E069D5 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		BF3BAA9A19D6F67000E069D5 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		BF3BAAA719D6F90400E069D5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BF3BAAA919D706B200E069D5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BF3BAAAB19D7075F00E069D5 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF3BAAA419D6F6AD00E069D5 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +102,7 @@
 				BF3BAA7519D6F23B00E069D5 /* contacts */,
 				BF3BAA8B19D6F23B00E069D5 /* contactsTests */,
 				BF3BAA7419D6F23B00E069D5 /* Products */,
+				BF3BAA9A19D6F67000E069D5 /* Alamofire.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,7 +119,11 @@
 			isa = PBXGroup;
 			children = (
 				BF3BAA7819D6F23B00E069D5 /* AppDelegate.swift */,
+				BF3BAAA919D706B200E069D5 /* BaseViewController.swift */,
+				BF3BAAA719D6F90400E069D5 /* LoginViewController.swift */,
 				BF3BAA9819D6F28400E069D5 /* ContactsViewController.swift */,
+				BF19D20C19D7263600FFDE07 /* DetailViewController.swift */,
+				BF3BAAAB19D7075F00E069D5 /* Contact.swift */,
 				BF3BAA7C19D6F23B00E069D5 /* Main.storyboard */,
 				BF3BAA7F19D6F23B00E069D5 /* Images.xcassets */,
 				BF3BAA8119D6F23B00E069D5 /* LaunchScreen.xib */,
@@ -112,6 +157,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BF3BAA9B19D6F67000E069D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF3BAAA019D6F67100E069D5 /* Alamofire.framework */,
+				BF3BAAA219D6F67100E069D5 /* AlamofireTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,6 +176,7 @@
 				BF3BAA6F19D6F23B00E069D5 /* Sources */,
 				BF3BAA7019D6F23B00E069D5 /* Frameworks */,
 				BF3BAA7119D6F23B00E069D5 /* Resources */,
+				BF3BAAA519D6F6C100E069D5 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -179,6 +234,12 @@
 			mainGroup = BF3BAA6A19D6F23B00E069D5;
 			productRefGroup = BF3BAA7419D6F23B00E069D5 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BF3BAA9B19D6F67000E069D5 /* Products */;
+					ProjectRef = BF3BAA9A19D6F67000E069D5 /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				BF3BAA7219D6F23B00E069D5 /* contacts */,
@@ -186,6 +247,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BF3BAAA019D6F67100E069D5 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = BF3BAA9F19D6F67100E069D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BF3BAAA219D6F67100E069D5 /* AlamofireTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireTests.xctest;
+			remoteRef = BF3BAAA119D6F67100E069D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BF3BAA7119D6F23B00E069D5 /* Resources */ = {
@@ -212,6 +290,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF3BAAA819D6F90400E069D5 /* LoginViewController.swift in Sources */,
+				BF3BAAAA19D706B200E069D5 /* BaseViewController.swift in Sources */,
+				BF3BAAAC19D7075F00E069D5 /* Contact.swift in Sources */,
+				BF19D20D19D7263600FFDE07 /* DetailViewController.swift in Sources */,
 				BF3BAA7919D6F23B00E069D5 /* AppDelegate.swift in Sources */,
 				BF3BAA9919D6F28400E069D5 /* ContactsViewController.swift in Sources */,
 			);
@@ -407,6 +489,7 @@
 				BF3BAA9419D6F23B00E069D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF3BAA9519D6F23B00E069D5 /* Build configuration list for PBXNativeTarget "contactsTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +498,7 @@
 				BF3BAA9719D6F23B00E069D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
