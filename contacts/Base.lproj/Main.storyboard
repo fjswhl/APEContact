@@ -84,6 +84,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="Szi-6X-JjQ">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IE1-WM-awK">
+                                    <rect key="frame" x="8" y="8" width="584" height="30"/>
+                                    <state key="normal" title="分享联系方式">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="didTapShareButton:" destination="OEG-Kd-eeQ" eventType="touchUpInside" id="Ipg-zF-iTQ"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="IE1-WM-awK" firstAttribute="top" secondItem="Szi-6X-JjQ" secondAttribute="topMargin" id="67u-rg-zoG"/>
+                                <constraint firstItem="IE1-WM-awK" firstAttribute="trailing" secondItem="Szi-6X-JjQ" secondAttribute="trailingMargin" id="r9y-Jy-e9P"/>
+                                <constraint firstItem="IE1-WM-awK" firstAttribute="leading" secondItem="Szi-6X-JjQ" secondAttribute="leadingMargin" id="riy-X5-yWy"/>
+                            </constraints>
+                        </view>
                         <sections>
                             <tableViewSection id="onN-Vw-Fme">
                                 <cells>
@@ -275,7 +296,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K4H-sj-sOG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2202" y="1050"/>
+            <point key="canvasLocation" x="2122" y="1050"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gQk-UV-TrJ">

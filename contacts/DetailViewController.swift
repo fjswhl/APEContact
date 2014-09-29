@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class DetailViewController: UITableViewController {
+class DetailViewController: UITableViewController, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var ldapLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
@@ -78,8 +79,11 @@ class DetailViewController: UITableViewController {
         
         if let email = findEmail(cell?.detailTextLabel?.text) {
             let emailAction = UIAlertAction(title: "写邮件 \(email)", style: .Default, handler: { (action) -> Void in
-                let url = NSURL(string: "mailto:\(email)")
-                UIApplication.sharedApplication().openURL(url)
+                let emailVC = MFMailComposeViewController()
+                emailVC.setToRecipients([email])
+                emailVC.mailComposeDelegate = self
+                self.presentViewController(emailVC, animated: true, completion: nil)
+
             })
             actionSheet.addAction(emailAction)
         }
@@ -88,5 +92,40 @@ class DetailViewController: UITableViewController {
         
         actionSheet.addAction(cancelAction)
         self.presentViewController(actionSheet, animated: true, completion: nil)
+    }
+    
+    @IBAction func didTapShareButton(sender: AnyObject) {
+        let actionSheet = UIAlertController(title: "生成完整的联系方式分享出去", message: nil, preferredStyle: .ActionSheet)
+        let content = "\(contact!.name!)\n手机: \(contact!.phone!)\n邮箱: \(contact!.email!)"
+        let copyAction = UIAlertAction(title: "复制到剪贴板", style: .Default) { (action) -> Void in
+            UIPasteboard.generalPasteboard().string = content
+        }
+        let emailAction = UIAlertAction(title: "通过邮件", style: .Default, handler: { (action) -> Void in
+            let emailVC = MFMailComposeViewController()
+            emailVC.setSubject("\(self.contact!.name!)的联系方式")
+            emailVC.setMessageBody(content, isHTML: false)
+            emailVC.mailComposeDelegate = self;
+            self.presentViewController(emailVC, animated: true, completion: nil)
+        })
+        let smsAction = UIAlertAction(title: "通过信息", style: .Default, handler: { (action) -> Void in
+            let msgVC = MFMessageComposeViewController()
+            msgVC.body = content
+            msgVC.messageComposeDelegate = self
+            self.presentViewController(msgVC, animated: true, completion: nil)
+        })
+        let cancelAction = UIAlertAction(title: "取消", style: .Cancel, nil)
+        actionSheet.addAction(copyAction)
+        actionSheet.addAction(emailAction)
+        actionSheet.addAction(smsAction)
+        actionSheet.addAction(cancelAction)
+        self.presentViewController(actionSheet, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
     }
 }
