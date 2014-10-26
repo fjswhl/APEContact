@@ -69,7 +69,7 @@ class ContactsViewController: BaseViewController, UITableViewDataSource, UITable
     
     private func getResponseStringFromFile() -> String? {
         let path = self.responseStringSavePath()
-        return String.stringWithContentsOfFile(path, encoding: NSUTF8StringEncoding, error: nil)
+        return String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)
     }
     
     // MARK: - Show Login ViewController
@@ -100,7 +100,7 @@ class ContactsViewController: BaseViewController, UITableViewDataSource, UITable
         let kCellIdentifier = "ContactCell"
         let cell = self.tableView.dequeueReusableCellWithIdentifier(kCellIdentifier, forIndexPath: indexPath) as? UITableViewCell
         let contact = tableView == self.searchDisplayController?.searchResultsTableView ? self.searchResults[indexPath.row] : self.contacts[indexPath.row]
-        cell!.textLabel?.text = contact.name
+        cell!.textLabel.text = contact.name
         cell!.detailTextLabel?.text = contact.phone
         return cell!;
     }
@@ -108,8 +108,9 @@ class ContactsViewController: BaseViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let contact = tableView == self.searchDisplayController?.searchResultsTableView ? self.searchResults[indexPath.row] : self.contacts[indexPath.row]
-        let url = NSURL(string: "telprompt://\(contact.phone!)")
-        UIApplication.sharedApplication().openURL(url)
+        if let url = NSURL(string: "telprompt://\(contact.phone!)") {
+            UIApplication.sharedApplication().openURL(url)
+        }
     }
     
     func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
