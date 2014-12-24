@@ -100,7 +100,7 @@ class ContactsViewController: BaseViewController, UITableViewDataSource, UITable
         let kCellIdentifier = "ContactCell"
         let cell = self.tableView.dequeueReusableCellWithIdentifier(kCellIdentifier, forIndexPath: indexPath) as? UITableViewCell
         let contact = tableView == self.searchDisplayController?.searchResultsTableView ? self.searchResults[indexPath.row] : self.contacts[indexPath.row]
-        cell!.textLabel.text = contact.name
+        cell!.textLabel?.text = contact.name
         cell!.detailTextLabel?.text = contact.phone
         return cell!;
     }

@@ -62,7 +62,7 @@ class DetailViewController: UITableViewController, MFMessageComposeViewControlle
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         
-        let actionSheet = UIAlertController(title: cell?.textLabel.text, message: cell?.detailTextLabel?.text, preferredStyle: .ActionSheet)
+        let actionSheet = UIAlertController(title: cell?.textLabel?.text, message: cell?.detailTextLabel?.text, preferredStyle: .ActionSheet)
         
         let copyAction = UIAlertAction(title: "复制到剪贴板", style: .Default) { (action) -> Void in
             UIPasteboard.generalPasteboard().string = cell?.detailTextLabel?.text
