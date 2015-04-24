@@ -27,7 +27,7 @@ class Contact: NSObject {
             scanner.scanUpToCharactersFromSet(closeCharset, intoString: nil);
             scanner.scanCharactersFromSet(closeCharset, intoString: nil)
             scanner.scanUpToString("</a>", intoString: &str)
-            return str
+            return str as? String
         }
         
         func getPTagContentFromString(string: String) -> String? {
@@ -38,7 +38,7 @@ class Contact: NSObject {
             scanner.scanUpToCharactersFromSet(closeCharset, intoString: nil);
             scanner.scanCharactersFromSet(closeCharset, intoString: nil)
             scanner.scanUpToString("</td>", intoString: &str)
-            return str
+            return str as? String
         }
         
         func getContentFromString(td: String) -> String? {
@@ -76,14 +76,14 @@ class Contact: NSObject {
             
             let tds = tr?.componentsSeparatedByString("<td>")
             
-            var name: String? = getContentFromString(tds![1] as String)
-            var ldap: String? = getContentFromString(tds![2] as String)
-            var email: String? = getContentFromString(tds![3] as String)
-            var phone: String? = getContentFromString(tds![4] as String)
-            var department: String? = getContentFromString(tds![5] as String)
-            var gmail: String? = getContentFromString(tds![6] as String)
-            var birthDay: String? = getContentFromString(tds![7] as String)
-            var horoscope: String? = getContentFromString(tds![8] as String)
+            var name: String? = getContentFromString(tds![1] as! String)
+            var ldap: String? = getContentFromString(tds![2] as! String)
+            var email: String? = getContentFromString(tds![3] as! String)
+            var phone: String? = getContentFromString(tds![4] as! String)
+            var department: String? = getContentFromString(tds![5] as! String)
+            var gmail: String? = getContentFromString(tds![6] as! String)
+            var birthDay: String? = getContentFromString(tds![7] as! String)
+            var horoscope: String? = getContentFromString(tds![8] as! String)
             
             func trim(str: String?) -> String? {
                 return str?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())

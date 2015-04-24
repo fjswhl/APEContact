@@ -44,7 +44,7 @@ class DetailViewController: UITableViewController, MFMessageComposeViewControlle
             }
             let regex = NSRegularExpression(pattern: regex, options: NSRegularExpressionOptions.allZeros, error: nil)
             if let first = regex?.firstMatchInString(str!, options: NSMatchingOptions.allZeros, range: NSMakeRange(0, (str! as NSString).length)) {
-                return (str? as NSString?)?.substringWithRange(first.range)
+                return (str as NSString?)?.substringWithRange(first.range)
             } else {
                 return nil
             }
@@ -89,7 +89,7 @@ class DetailViewController: UITableViewController, MFMessageComposeViewControlle
             actionSheet.addAction(emailAction)
         }
         
-        let cancelAction = UIAlertAction(title: "取消", style: .Cancel, nil)
+        let cancelAction = UIAlertAction(title: "取消", style: .Cancel, handler: nil)
         
         actionSheet.addAction(cancelAction)
         self.presentViewController(actionSheet, animated: true, completion: nil)
@@ -114,7 +114,7 @@ class DetailViewController: UITableViewController, MFMessageComposeViewControlle
             msgVC.messageComposeDelegate = self
             self.presentViewController(msgVC, animated: true, completion: nil)
         })
-        let cancelAction = UIAlertAction(title: "取消", style: .Cancel, nil)
+        let cancelAction = UIAlertAction(title: "取消", style: .Cancel, handler: nil)
         actionSheet.addAction(copyAction)
         actionSheet.addAction(emailAction)
         actionSheet.addAction(smsAction)

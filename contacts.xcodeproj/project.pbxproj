@@ -22,6 +22,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		20A52BCB1AEA8AD90090C787 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF3BAA9A19D6F67000E069D5 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4DD67C0B1A5C55C900ED2280;
+			remoteInfo = "Alamofire OSX";
+		};
+		20A52BCD1AEA8AD90090C787 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF3BAA9A19D6F67000E069D5 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
+			remoteInfo = "Alamofire OSX Tests";
+		};
 		BF3BAA8919D6F23B00E069D5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BF3BAA6B19D6F23B00E069D5 /* Project object */;
@@ -161,7 +175,9 @@
 			isa = PBXGroup;
 			children = (
 				BF3BAAA019D6F67100E069D5 /* Alamofire.framework */,
-				BF3BAAA219D6F67100E069D5 /* AlamofireTests.xctest */,
+				20A52BCC1AEA8AD90090C787 /* Alamofire.framework */,
+				BF3BAAA219D6F67100E069D5 /* Alamofire iOS Tests.xctest */,
+				20A52BCE1AEA8AD90090C787 /* Alamofire OSX Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -250,6 +266,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		20A52BCC1AEA8AD90090C787 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 20A52BCB1AEA8AD90090C787 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		20A52BCE1AEA8AD90090C787 /* Alamofire OSX Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire OSX Tests.xctest";
+			remoteRef = 20A52BCD1AEA8AD90090C787 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		BF3BAAA019D6F67100E069D5 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -257,10 +287,10 @@
 			remoteRef = BF3BAA9F19D6F67100E069D5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		BF3BAAA219D6F67100E069D5 /* AlamofireTests.xctest */ = {
+		BF3BAAA219D6F67100E069D5 /* Alamofire iOS Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = AlamofireTests.xctest;
+			path = "Alamofire iOS Tests.xctest";
 			remoteRef = BF3BAAA119D6F67100E069D5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};

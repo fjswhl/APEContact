@@ -26,7 +26,7 @@ class LoginViewController: BaseViewController {
     
     private func requestLoginWithUserName(username: String, password: String) {
         self.showLoadingAlert()
-        Alamofire.request(.POST, "http://wiki.zhenguanyu.com/FrontPage?action=login", parameters: ["name": username, "password": password, "login": "Login"])
+        Alamofire.request(.POST, "https://wiki.zhenguanyu.com/FrontPage?action=login", parameters: ["name": username, "password": password, "login": "Login"])
             .response { (request, response, data, error) in
                 self.hideLoadingAlert()
                 if (200 <= response?.statusCode && response?.statusCode <= 299) {

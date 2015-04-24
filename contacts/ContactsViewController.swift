@@ -58,7 +58,7 @@ class ContactsViewController: BaseViewController, UITableViewDataSource, UITable
     // MARK: - Response Store
     
     private func responseStringSavePath() -> String {
-        let dir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .AllDomainsMask, true).first as String
+        let dir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .AllDomainsMask, true).first as! String
         return dir.stringByAppendingPathComponent("response.string")
     }
     
@@ -142,8 +142,8 @@ class ContactsViewController: BaseViewController, UITableViewDataSource, UITable
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "showDetail" {
-            let contact = sender as Contact
-            let des = segue.destinationViewController as DetailViewController
+            let contact = sender as! Contact
+            let des = segue.destinationViewController as! DetailViewController
             des.contact = contact
         }
     }
