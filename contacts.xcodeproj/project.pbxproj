@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EB113621B903DBC00BE947C /* ABHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB113611B903DBC00BE947C /* ABHelper.swift */; };
 		BF19D20D19D7263600FFDE07 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF19D20C19D7263600FFDE07 /* DetailViewController.swift */; };
 		BF3BAA7919D6F23B00E069D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAA7819D6F23B00E069D5 /* AppDelegate.swift */; };
 		BF3BAA7E19D6F23B00E069D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAA7C19D6F23B00E069D5 /* Main.storyboard */; };
@@ -74,6 +75,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3EB113611B903DBC00BE947C /* ABHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABHelper.swift; sourceTree = "<group>"; };
 		BF19D20C19D7263600FFDE07 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BF3BAA7319D6F23B00E069D5 /* contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF3BAA7719D6F23B00E069D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				BF3BAA9819D6F28400E069D5 /* ContactsViewController.swift */,
 				BF19D20C19D7263600FFDE07 /* DetailViewController.swift */,
 				BF3BAAAB19D7075F00E069D5 /* Contact.swift */,
+				3EB113611B903DBC00BE947C /* ABHelper.swift */,
 				BF3BAA7C19D6F23B00E069D5 /* Main.storyboard */,
 				BF3BAA7F19D6F23B00E069D5 /* Images.xcassets */,
 				BF3BAA8119D6F23B00E069D5 /* LaunchScreen.xib */,
@@ -326,6 +329,7 @@
 				BF3BAAAC19D7075F00E069D5 /* Contact.swift in Sources */,
 				BF19D20D19D7263600FFDE07 /* DetailViewController.swift in Sources */,
 				BF3BAA7919D6F23B00E069D5 /* AppDelegate.swift in Sources */,
+				3EB113621B903DBC00BE947C /* ABHelper.swift in Sources */,
 				BF3BAA9919D6F28400E069D5 /* ContactsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

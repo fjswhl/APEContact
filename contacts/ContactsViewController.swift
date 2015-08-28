@@ -138,6 +138,49 @@ class ContactsViewController: BaseViewController, UITableViewDataSource, UITable
         self.requestContacts()
     }
 
+    @IBAction func didTapAddToAddressBookButton(sender: AnyObject) {
+        let importQueue = dispatch_queue_create("importAB", nil)
+        let group = dispatch_group_create()
+
+        let alert = UIAlertController(title: nil, message: "请填写分组名，空则不创建新组", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
+            textField.text = "猿题库"
+            textField.placeholder = "组名(可选)"
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: .Cancel) { (_) -> Void in
+
+        }
+        let confirmAction = UIAlertAction(title: "确定", style: .Default) { (_) -> Void in
+            let textField = alert.textFields![0] as! UITextField
+            let importingAlertVC = UIAlertController(title: "正在导入...", message: nil, preferredStyle: .Alert)
+            self.presentViewController(importingAlertVC, animated: true, completion: nil)
+
+            dispatch_group_async(group, importQueue, { () -> Void in
+                self.addAllContactsToAddressBook(textField.text)
+            })
+
+            dispatch_group_notify(group, dispatch_get_main_queue(), { () -> Void in
+                importingAlertVC.dismissViewControllerAnimated(true, completion: nil)
+                let successAlert = UIAlertController(title: "通讯录已更新", message: nil, preferredStyle: .Alert)
+                self.presentViewController(successAlert, animated: true, completion: nil)
+
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), { () -> Void in
+                    successAlert.dismissViewControllerAnimated(true, completion: nil)
+                })
+            })
+            alert.dismissViewControllerAnimated(false, completion: nil)
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(confirmAction)
+        self.presentViewController(alert, animated: false, completion: nil)
+    }
+
+    func addAllContactsToAddressBook(groupName: String?) {
+        for contact in self.contacts {
+            ABHelper.insertIntoAddressBook(contact, groupName: groupName ?? "猿题库")
+        }
+    }
+
     // MARK: - Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
