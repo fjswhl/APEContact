@@ -8,6 +8,8 @@
 
 import UIKit
 import MessageUI
+import AddressBook
+
 
 class DetailViewController: UITableViewController, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
     @IBOutlet var nameLabel: UILabel!
@@ -38,6 +40,20 @@ class DetailViewController: UITableViewController, MFMessageComposeViewControlle
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+
+        if indexPath.row == 0 && indexPath.section == 2 {
+            ABHelper.insertIntoAddressBook(contact!, groupName: "猿题库")
+
+            let successAlert = UIAlertController(title: "通讯录已更新", message: nil, preferredStyle: .Alert)
+            self.presentViewController(successAlert, animated: true, completion: nil)
+
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), { () -> Void in
+                successAlert.dismissViewControllerAnimated(true, completion: nil)
+            })
+            return
+        }
+
         func findString(str: String?, withRegex regex: String) -> String? {
             if str == nil {
                 return nil
@@ -59,7 +75,6 @@ class DetailViewController: UITableViewController, MFMessageComposeViewControlle
         }
         
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         
         let actionSheet = UIAlertController(title: cell?.textLabel?.text, message: cell?.detailTextLabel?.text, preferredStyle: .ActionSheet)
