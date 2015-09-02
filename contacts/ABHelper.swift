@@ -22,6 +22,7 @@ struct ABHelper {
         })
     }
 
+
     static func openAppSettings() {
         if let url = NSURL(string: UIApplicationOpenSettingsURLString) {
             UIApplication.sharedApplication().openURL(url)
@@ -89,7 +90,27 @@ struct ABHelper {
             ABRecordSetValue(contactRecord, kABPersonDepartmentProperty, depart, nil)
         }
 
+        if let ldap = contact.ldap {
+            ABRecordSetValue(contactRecord, kABPersonFirstNamePhoneticProperty, ldap, nil)
+        }
 
+        if let birthday = contact.birthDay {
+            struct Static {
+
+                static var onceToken: dispatch_once_t = 0
+                static var dateFormatter: NSDateFormatter? = nil
+            }
+
+            dispatch_once(&Static.onceToken) {
+                Static.dateFormatter = NSDateFormatter()
+                Static.dateFormatter?.dateFormat = "MM月dd日yyyy"
+                Static.dateFormatter?.timeZone = NSTimeZone(abbreviation: "GMT")
+            }
+
+            if let birthDate = Static.dateFormatter?.dateFromString(birthday + "1604") {
+                ABRecordSetValue(contactRecord, kABPersonBirthdayProperty, birthDate as CFDateRef, nil)
+            }
+        }
         ABAddressBookAddRecord(addressBook, contactRecord, nil)
         saveAddressBookChanges()
 
